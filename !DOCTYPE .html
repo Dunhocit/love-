@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yêu em</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+            background: radial-gradient(circle, #ff9a9e, #fad0c4, #fbc2eb);
+            animation: backgroundShift 10s infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% {
+                background: radial-gradient(circle, #ff9a9e, #fad0c4, #fbc2eb);
+            }
+            100% {
+                background: radial-gradient(circle, #fbc2eb, #a18cd1, #fad0c4);
+            }
+        }
+
+        #canvas {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .content h1 {
+            font-size: 4rem;
+            text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content img {
+            width: 300px;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="content">
+        <h1>To My Love</h1>
+        <img src="./IMG_5891[1].png" alt="Your Love">
+        <p>Bé yêu của Anh ❤️</p>
+    </div>
+
+    <audio id="audio" autoplay loop>
+        <source src="./phonecert.mp3" type="audio/mp3">
+    </audio>
+<script>
+    document.body.addEventListener("click", function() {
+        document.getElementById("audio").play();
+    });
+</script>
+</body>
+</html>
